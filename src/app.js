@@ -1,10 +1,14 @@
 const express = require("express");
+const cors = require("cors");
 
 const app = express();
 
-// Simple test route
-app.get("/", (req, res) => {
-  res.status(200).json({ message: "Hello, World!" });
-});
+app.use(cors());
+app.use(express.json()); // For JSON body parsing
+app.use(express.urlencoded({ extended: true })); // For form data
 
-module.exports = app; // Export app for testing
+// Import routes
+const fileRoutes = require("./routes/fileRoutes");
+app.use("/api/files", fileRoutes);
+
+module.exports = app;
