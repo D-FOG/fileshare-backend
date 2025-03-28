@@ -1,5 +1,5 @@
 {
-  "name": "Fileshare-Backend",
+  "name": "fileshare-backend",
   "version": "1.0.0",
   "description": "",
   "main": "src/server.js",
@@ -21,6 +21,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "bcryptjs": "^3.0.2",
     "cloudinary": "^2.6.0",
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
