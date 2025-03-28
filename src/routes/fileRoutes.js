@@ -1,9 +1,10 @@
 const express = require("express");
-const { uploadFile } = require("../controllers/fileController");
-const upload = require("../middlewares/multerConfig"); // Middleware for file handling
+const { uploadFile, getAllFiles } = require("../controllers/fileController");
+const upload = require("../middlewares/multerConfig");
 
 const router = express.Router();
 
-router.post("/upload", upload.single("file"), uploadFile); // Upload file
+router.post("/upload", upload.single("file"), uploadFile);
+router.get("/", getAllFiles); // Route to fetch all uploaded files
 
 module.exports = router;
